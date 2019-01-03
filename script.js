@@ -1,17 +1,22 @@
-// var person = {
-//     name: 'John',
-//     age: 25,
-//     isMarried: false
-// };
-// console.log(person.name);
+var money, time;
 
-// var arr = ["plum.png", "orange.jpeg", "apple.bmp"];
-// console.log(arr[1]);
-// console.log(typeof(arr[1]));
+money = prompt("Ваш бюджет на месяц");
+time = prompt("Введите дату в формате YYYY-MM-DD");
 
-// alert("Hello world");
-//var answer = confirm("Are you here?");
-//var answer = prompt("Есть ли вам 18?", "Да");
-//console.log(typeof(answer));
+var appData = {
+    money: money,
+    time: time,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
+    savings: false
+};
 
-console.log(typeof(null));
+for (var index = 0; index < 2; index++) {
+    var exp0 = prompt("Введите обязательную статью расходов в этом месяце");
+    var exp1 = prompt("Во сколько обойдется?");
+    appData.expenses[exp0] = exp1;
+}
+
+alert(appData.money / 30);
+
